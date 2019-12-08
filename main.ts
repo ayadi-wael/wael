@@ -8,25 +8,25 @@ load dependency
 
 
 //% color="#C814B8" weight=25 icon="\uf1d4"
-namespace cbit_显示类 {
+namespace cbit_Affichage {
     
     export enum enColor {
 
-        //% blockId="OFF" block="灭"
+        //% blockId="OFF" block="Eteindre"
         OFF = 0,
-        //% blockId="Red" block="红色"
+        //% blockId="Red" block="Rouge"
         Red,
-        //% blockId="Green" block="绿色"
+        //% blockId="Green" block="Vert"
         Green,
-        //% blockId="Blue" block="蓝色"
+        //% blockId="Blue" block="Bleu"
         Blue,
-        //% blockId="White" block="白色"
+        //% blockId="White" block="Blanc"
         White,
-        //% blockId="Cyan" block="青色"
+        //% blockId="Cyan" block="Cyan"
         Cyan,
-        //% blockId="Pinkish" block="品红"
+        //% blockId="Pinkish" block="Rose"
         Pinkish,
-        //% blockId="Green" block="黄色"
+        //% blockId="Green" block="Jaune"
         Yellow,
 
     }
@@ -161,24 +161,24 @@ namespace cbit_显示类 {
  ****************************************************************************************************************************************/
 
 //% color="#87CEEB" weight=24 icon="\uf1b6"
-namespace cbit_传感器类 {
+namespace cbit_Capteurs {
 
     export enum enVoice {
-        //% blockId="Voice" block="有声音"
+        //% blockId="Voice" block="Voie"
         Voice = 0,
-        //% blockId="NoVoice" block="无声音"
+        //% blockId="NoVoice" block="Mute"
         NoVoice = 1
     }
 
     export enum enIR {
-        //% blockId="Get" block="检测到"
+        //% blockId="Get" block="Détecté"
         Get = 0,
-        //% blockId="NoVoice" block="未检测"
+        //% blockId="NoVoice" block="Non détecté"
         NoGet = 1
     }
     
 
-    //% blockId=cbit_Voice_Sensor block="声音传感器|引脚 %pin|返回 %value"
+    //% blockId=cbit_Voice_Sensor block="Capteur sonore|Pin %pin|Retour à %value"
     //% weight=100
     //% blockGap=10
     //% color="#87CEEB"
@@ -203,7 +203,7 @@ namespace cbit_传感器类 {
             control.waitMicros(13);
         }
     }
-    //% blockId=cbit_IR_Sensor block="红外传感器|引脚 %pin|  |%value|障碍物"
+    //% blockId=cbit_IR_Sensor block="Capteur infrarouge|Pin %pin|  |%value|Obstacle"
     //% weight=100
     //% blockGap=10
     //% color="#87CEEB"
@@ -259,20 +259,20 @@ namespace cbit_传感器类 {
  ****************************************************************************************************************************************/
 
 //% color="#808080" weight=23 icon="\uf11c"
-namespace cbit_输入类 {
+namespace cbit_entrées {
 
     export enum enRocker {
-        //% blockId="Nostate" block="无"
+        //% blockId="Nostate" block="Aucun"
         Nostate = 0,
-        //% blockId="Up" block="上"
+        //% blockId="Up" block="En haut"
         Up,
-        //% blockId="Down" block="下"
+        //% blockId="Down" block="Vers le bas"
         Down,
-        //% blockId="Left" block="左"
+        //% blockId="Left" block="gauche"
         Left,
-        //% blockId="Right" block="右"
+        //% blockId="Right" block="droite"
         Right,
-        //% blockId="Press" block="按下"
+        //% blockId="Press" block="Appuyez sur"
         Press
     }
 
@@ -370,7 +370,7 @@ namespace cbit_输入类 {
  ****************************************************************************************************************************************/
 
 //% color="#D2691E" weight=22 icon="\uf001"
-namespace cbit_音乐类 {
+namespace cbit_musique {
     export enum enBuzzer {
 
         //% blockId="NoBeep" block="响"
@@ -399,7 +399,7 @@ namespace cbit_音乐类 {
  ****************************************************************************************************************************************/
 
 //% color="#0000CD" weight=21 icon="\uf185"
-namespace cbit_电机类 {
+namespace cbit_Moteur {
 
     //% blockId=cbit_Fan block="风扇|引脚 %pin|速度 %value"
     //% weight=100
@@ -428,7 +428,7 @@ namespace cbit_电机类 {
 }
 
 //% color="#006400" weight=20 icon="\uf1b9"
-namespace cbit_小车类 {
+namespace cbit_Chariot {
 
     const PCA9685_ADD = 0x41
     const MODE1 = 0x00
