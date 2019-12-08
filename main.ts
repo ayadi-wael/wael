@@ -528,9 +528,9 @@ namespace cbit_Chariot {
         S3
     }
     export enum CarState {
-        //% blockId="Car_Run" block="Transférer"
+        //% blockId="Car_Run" block="Avancer"
         Car_Run = 1,
-        //% blockId="Car_Back" block="Retour"
+        //% blockId="Car_Back" block="Arriére"
         Car_Back = 2,
         //% blockId="Car_Left" block="Tourner à gauche"
         Car_Left = 3,
@@ -538,9 +538,9 @@ namespace cbit_Chariot {
         Car_Right = 4,
         //% blockId="Car_Stop" block="Arrêter"
         Car_Stop = 5,
-        //% blockId="Car_SpinLeft" block="Gaucher"
+        //% blockId="Car_SpinLeft" block="demi-tour gauche"
         Car_SpinLeft = 6,
-        //% blockId="Car_SpinRight" block="Droitier"
+        //% blockId="Car_SpinRight" block="demi-tour droite"
         Car_SpinRight = 7         
     }
     export enum AloneState {
