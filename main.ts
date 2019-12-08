@@ -32,13 +32,13 @@ namespace cbit_Affichage {
     }
     export enum enLED1 {
         
-        //% blockId="OFF" block="灭"
+        //% blockId="OFF" block="Éteindre"
         OFF = 0,
-        //% blockId="ON" block="亮"
+        //% blockId="ON" block="Allumé"
         ON =1
     }
 
-    //% blockId=cbit_LED1 block="LED灯|引脚 %pin|状态 %value"
+    //% blockId=cbit_LED1 block="LEDLampe|Pin %pin|Statut %value"
     //% weight=5
     //% blockGap=8
     //% color="#C814B8"
@@ -49,7 +49,7 @@ namespace cbit_Affichage {
 
     }
 
-    //% blockId=cbit_LED2 block="LED灯|引脚 %pin|亮度 %value"
+    //% blockId=cbit_LED2 block="LEDLampe|Pin %pin|Luminosité %value"
     //% weight=4
     //% blockGap=8
     //% color="#C814B8"
@@ -61,7 +61,7 @@ namespace cbit_Affichage {
 
     }
 
-    //% blockId=cbit_BreathLED block="呼吸灯|引脚 %pin"
+    //% blockId=cbit_BreathLED block="respirer la lumière|Pin %pin"
     //% weight=3
     //% blockGap=8
     //% color="#C814B8"
@@ -82,7 +82,7 @@ namespace cbit_Affichage {
 
     }
 
-    //% blockId=cbit_RGB block="RGB七彩灯|引脚R %pin1|引脚G %pin2|引脚B %pin3|红色 %value1|绿色 %value2|蓝色 %value3"
+    //% blockId=cbit_RGB block="RGBLumières colorées|PinR %pin1|PinG %pin2|PinB %pin3|Rouge %value1|Vert %value2|Bleu %value3"
     //% weight=2
     //% blockGap=8
     //% color="#C814B8"
@@ -95,7 +95,7 @@ namespace cbit_Affichage {
         pins.analogWritePin(pin3, value3 * 1024 / 256);
 
     }
-    //% blockId=cbit_RGB2 block="RGB七彩灯|引脚R %pin1|引脚G %pin2|引脚B %pin3|显示 %value"
+    //% blockId=cbit_RGB2 block="RGBLumières colorées|Pin R%pin1|PinG %pin2|PinB %pin3|Afficher %value"
     //% weight=1
     //% blockGap=8
     //% color="#C814B8"
@@ -157,7 +157,7 @@ namespace cbit_Affichage {
    
 }
 /*****************************************************************************************************************************************
- *  传感器类 ***************************************************************************************************************************** 
+ *  Capteurs ***************************************************************************************************************************** 
  ****************************************************************************************************************************************/
 
 //% color="#87CEEB" weight=24 icon="\uf1b6"
@@ -221,7 +221,7 @@ namespace cbit_Capteurs {
 
     }
 
-    //% blockId=cbit_IR_Send block="红外发射|引脚 %pin"
+    //% blockId=cbit_IR_Send block="Emission infrarouge|Pin %pin"
     //% weight=100
     //% blockGap=10
     //% color="#87CEEB"
@@ -233,7 +233,7 @@ namespace cbit_Capteurs {
 
     }
    
-    //% blockId=cbit_ultrasonic block="超声波|发射管脚 %Trig|接收管脚 %Echo"
+    //% blockId=cbit_ultrasonic block="ultrason|Épingle de lancement %Trig|Recevoir la broche %Echo"
     //% color="#87CEEB"
     //% weight=100
     //% blockGap=10
@@ -255,7 +255,7 @@ namespace cbit_Capteurs {
 }
 
 /*****************************************************************************************************************************************
- *  输入类 *****************************************************************************************************************************
+ *  Classe d'entrée*****************************************************************************************************************************
  ****************************************************************************************************************************************/
 
 //% color="#808080" weight=23 icon="\uf11c"
@@ -277,19 +277,19 @@ namespace cbit_entrées {
     }
 
     export enum enTouch {
-        //% blockId="NoTouch" block="未触摸"
+        //% blockId="NoTouch" block="Pas touché"
         NoTouch = 0,
-        //% blockId="Touch" block="触摸"
+        //% blockId="Touch" block="Touché"
         Touch = 1
     }
     export enum enButton {
-        //% blockId="Press" block="按下"
+        //% blockId="Press" block="Appuyez sur"
         Press = 0,
-        //% blockId="Realse" block="松开"
+        //% blockId="Realse" block="Relâchez"
         Realse = 1
     }
 
-    //% blockId=cbit_TouchPad block="触摸开关|引脚 %pin|返回 %value"
+    //% blockId=cbit_TouchPad block="Interrupteur tactile|Pin %pin|Retour à%value"
     //% weight=100
     //% blockGap=10
     //% color="#808080"
@@ -305,7 +305,7 @@ namespace cbit_entrées {
         }
 
     }
-    //% blockId=cbit_Rocker block="遥杆|VRX %pin1|VRY %pin2|SW %pin3|返回 %value"
+    //% blockId=cbit_Rocker block="À distance|VRX %pin1|VRY %pin2|SW %pin3|Retour à %value"
     //% weight=100
     //% blockGap=10
     //% color="#808080"
@@ -318,7 +318,7 @@ namespace cbit_entrées {
         let z = pins.analogReadPin(pin3);
         let now_state = enRocker.Nostate;
 
-        if (x <= 20) // 上
+        if (x <= 20) // En haut
         {
 
             now_state = enRocker.Up;
@@ -329,11 +329,11 @@ namespace cbit_entrées {
 
             now_state = enRocker.Down;
         }
-        if (y <= 50) //右
+        if (y <= 50) //À droite
         {
             now_state = enRocker.Right;
         }
-        if (y >= 1000) //左
+        if (y >= 1000) //Gauche
         {
             now_state = enRocker.Left;
         }
@@ -347,7 +347,7 @@ namespace cbit_entrées {
 
     }
 
-    //% blockId=cbit_Button block="按键|引脚 %pin|返回 %value"
+    //% blockId=cbit_Button block="Bouton|Pin %pin|Retour à %value"
     //% weight=100
     //% blockGap=10
     //% color="#808080"
@@ -366,20 +366,20 @@ namespace cbit_entrées {
 }
 
 /*****************************************************************************************************************************************
- *    音乐类 *****************************************************************************************************************************
+ *    La musique *****************************************************************************************************************************
  ****************************************************************************************************************************************/
 
 //% color="#D2691E" weight=22 icon="\uf001"
 namespace cbit_musique {
     export enum enBuzzer {
 
-        //% blockId="NoBeep" block="响"
+        //% blockId="NoBeep" block="Bague"
         NoBeep = 0,
-        //% blockId="Beep" block="不响"
+        //% blockId="Beep" block="Ne sonne pas"
         Beep
     }
 
-    //% blockId=cbit_Buzzer block="有源蜂鸣器|引脚 %pin|值 %value"
+    //% blockId=cbit_Buzzer block="Buzzer actif|Pin %pin|Valeur %value"
     //% weight=100
     //% blockGap=10 
     //% color="#D2691E"
@@ -395,13 +395,13 @@ namespace cbit_musique {
 }
 
 /*****************************************************************************************************************************************
- *    电机类 *****************************************************************************************************************************
+ *    Catégorie de moteur *****************************************************************************************************************************
  ****************************************************************************************************************************************/
 
 //% color="#0000CD" weight=21 icon="\uf185"
 namespace cbit_Moteur {
 
-    //% blockId=cbit_Fan block="风扇|引脚 %pin|速度 %value"
+    //% blockId=cbit_Fan block="Ventilateur|Pin %pin|La vitesse %value"
     //% weight=100
     //% blockGap=10
     //% color="#0000CD"
@@ -413,7 +413,7 @@ namespace cbit_Moteur {
 
     }
 
-    //% blockId=cbit_Servo block="舵机|引脚 %pin|角度 %value"
+    //% blockId=cbit_Servo block="Appareil à gouverner|Pin %pin|Angle%value"
     //% weight=100
     //% blockGap=10
     //% color="#0000CD"
@@ -454,21 +454,21 @@ namespace cbit_Chariot {
 
     export enum enColor {
 
-        //% blockId="OFF" block="灭"
+        //% blockId="OFF" block="Éteindre"
         OFF = 0,
-        //% blockId="Red" block="红色"
+        //% blockId="Red" block="Rouge"
         Red,
-        //% blockId="Green" block="绿色"
+        //% blockId="Green" block="Vert"
         Green,
-        //% blockId="Blue" block="蓝色"
+        //% blockId="Blue" block="Bleu"
         Blue,
-        //% blockId="White" block="白色"
+        //% blockId="White" block="Blanc"
         White,
-        //% blockId="Cyan" block="青色"
+        //% blockId="Cyan" block="bleu"
         Cyan,
-        //% blockId="Pinkish" block="品红"
+        //% blockId="Pinkish" block="Magenta"
         Pinkish,
-        //% blockId="Green" block="黄色"
+        //% blockId="Green" block="Jaune"
         Yellow,
 
     }
@@ -498,24 +498,24 @@ namespace cbit_Chariot {
     }
     export enum enPos {
 
-        //% blockId="LeftState" block="左边状态"
+        //% blockId="LeftState" block="Etat gauche"
         LeftState = 1,
-        //% blockId="RightState" block="右边状态"
+        //% blockId="RightState" block="Etat droite"
         RightState = 0
     }
 
     export enum enLineState {
-        //% blockId="White" block="白线"
+        //% blockId="White" block="Ligne blanche"
         White = 0,
-        //% blockId="Black" block="黑线"
+        //% blockId="Black" block="Ligne noire"
         Black = 1
 
     }
     
     export enum enAvoidState {
-        //% blockId="OBSTACLE" block="有障碍物"
+        //% blockId="OBSTACLE" block="Il y a des obstacles"
         OBSTACLE = 0,
-        //% blockId="NOOBSTACLE" block="无障碍物"
+        //% blockId="NOOBSTACLE" block="Aucun obstacle"
         NOOBSTACLE = 1
 
     }
@@ -528,29 +528,29 @@ namespace cbit_Chariot {
         S3
     }
     export enum CarState {
-        //% blockId="Car_Run" block="前行"
+        //% blockId="Car_Run" block="Transférer"
         Car_Run = 1,
-        //% blockId="Car_Back" block="后退"
+        //% blockId="Car_Back" block="Retour"
         Car_Back = 2,
-        //% blockId="Car_Left" block="左转"
+        //% blockId="Car_Left" block="Tourner à gauche"
         Car_Left = 3,
-        //% blockId="Car_Right" block="右转"
+        //% blockId="Car_Right" block="Tourner à droite"
         Car_Right = 4,
-        //% blockId="Car_Stop" block="停止"
+        //% blockId="Car_Stop" block="Arrêter"
         Car_Stop = 5,
-        //% blockId="Car_SpinLeft" block="原地左旋"
+        //% blockId="Car_SpinLeft" block="Gaucher"
         Car_SpinLeft = 6,
-        //% blockId="Car_SpinRight" block="原地右旋"
+        //% blockId="Car_SpinRight" block="Droitier"
         Car_SpinRight = 7         
     }
     export enum AloneState {
-        //% blockId="Right_Z_Motor" block="右侧电机正转"
+        //% blockId="Right_Z_Motor" block="Le moteur droit tourne vers l'avant"
         Right_Z_Motor = 1,
-        //% blockId="Right_F_Motor" block="右侧电机反转"
+        //% blockId="Right_F_Motor" block="Le moteur droit tourne vers l'arriére"
         Right_F_Motor = 2,
-        //% blockId="Left_Z_Motor" block="左侧电机正转"
+        //% blockId="Left_Z_Motor" block="Le moteur gauche tourne vers l'avant"
         Left_Z_Motor = 3,
-        //% blockId="Left_F_Motor" block="左侧电机反转"
+        //% blockId="Left_F_Motor" block="Le moteur gauche tourne vers l'arriére"
         Left_F_Motor = 4       
     }
 
@@ -627,9 +627,9 @@ namespace cbit_Chariot {
         setPwm(15, 0, speed);
         setPwm(14, 0, 0);
         //pins.digitalWritePin(DigitalPin.P16, 1);
-       // pins.analogWritePin(AnalogPin.P1, 1023-speed); //速度控制
+       // pins.analogWritePin(AnalogPin.P1, 1023-speed); //Contrôle de vitesse
 
-       // pins.analogWritePin(AnalogPin.P0, speed);//速度控制
+       // pins.analogWritePin(AnalogPin.P0, speed);//Contrôle de vitesse
        // pins.digitalWritePin(DigitalPin.P8, 0);
     }
    function Left_Z_run(speed: number) {
@@ -713,9 +713,9 @@ namespace cbit_Chariot {
         setPwm(14, 0, speed);
 
         //pins.digitalWritePin(DigitalPin.P16, 0);
-        //pins.analogWritePin(AnalogPin.P1, speed); //速度控制
+        //pins.analogWritePin(AnalogPin.P1, speed); //Contrôle de vitesse
 
-        //pins.analogWritePin(AnalogPin.P0, 1023 - speed);//速度控制
+        //pins.analogWritePin(AnalogPin.P0, 1023 - speed);//Contrôle de vitesse
         //pins.digitalWritePin(DigitalPin.P8, 1);
     }
 
@@ -823,7 +823,7 @@ namespace cbit_Chariot {
      * *****************************************************************
      * @param index
      */
-    //% blockId=cbit_RGB_Car_Big2 block="小车RGB探照灯|选择车灯颜色 %value"
+    //% blockId=cbit_RGB_Car_Big2 block="Projecteur RVB de voiture|Choisissez une couleur de phare %value"
     //% weight=101
     //% blockGap=10
     //% color="#C814B8"
@@ -881,7 +881,7 @@ namespace cbit_Chariot {
             }
         }
     }
-    //% blockId=cbit_RGB_Car_Big block="小车RGB探照灯|红色 %value1|绿色 %value2|蓝色 %value3"
+    //% blockId=cbit_RGB_Car_Big block="Projecteur RVB de voiture|rouge%value1|Vert %value2|Bleu %value3"
     //% weight=100
     //% blockGap=10
     //% color="#C814B8"
@@ -906,7 +906,7 @@ namespace cbit_Chariot {
 
     }
 
-    //% blockId=cbit_RGB_Car_Program block="七彩流水灯"
+    //% blockId=cbit_RGB_Car_Program block="Feux de course colorés"
     //% weight=99
     //% blockGap=10
     //% color="#C814B8"
@@ -920,7 +920,7 @@ namespace cbit_Chariot {
     }
 
 
-    //% blockId=cbit_ultrasonic_car block="超声波返回(cm)"
+    //% blockId=cbit_ultrasonic_car block="Retour ultrasonique(cm)"
     //% color="#006400"
     //% weight=98
     //% blockGap=10
@@ -940,7 +940,7 @@ namespace cbit_Chariot {
         return d / 58;
     }
 
-    //% blockId=cbit_Music_Car block="小车音乐播放|%index"
+    //% blockId=cbit_Music_Car block="Lecteur de musique sur chariot|%index"
     //% weight=97
     //% blockGap=10
     //% color="#006400"
@@ -969,7 +969,7 @@ namespace cbit_Chariot {
             case enMusic.power_down: music.beginMelody(music.builtInMelody(Melodies.PowerDown), MelodyOptions.Once); break;
         }
     }
-    //% blockId=cbit_Servo_Car block="小车舵机|编号 %num|角度 %value"
+    //% blockId=cbit_Servo_Car block="Appareil à gouverner de voiture|Numéro %num|Angle %value"
     //% weight=96
     //% blockGap=10
     //% color="#006400"
@@ -984,7 +984,7 @@ namespace cbit_Chariot {
 
     }
 
-    //% blockId=cbit_Avoid_Sensor block="避障传感器|检测到 %value"
+    //% blockId=cbit_Avoid_Sensor block="Capteur d'évitement d'obstacles|Détecté %value"
     //% weight=95
     //% blockGap=10
     //% color="#006400"
@@ -1024,7 +1024,7 @@ namespace cbit_Chariot {
         return temp;
 
     }
-    //% blockId=cbit_Line_Sensor block="巡线传感器|位置 %direct|检测到 %value"
+    //% blockId=cbit_Line_Sensor block="Capteur de suiveur de ligne|Emplacement %direct|Détecté %value"
     //% weight=94
     //% blockGap=10
     //% color="#006400"
@@ -1069,7 +1069,7 @@ namespace cbit_Chariot {
         return temp;
 
     }
-    //% blockId=cbit_CarCtrl block="小车控制|%index"
+    //% blockId=cbit_CarCtrl block="Contrôle de voiture|%index"
     //% weight=93
     //% blockGap=10
     //% color="#006400"
@@ -1085,7 +1085,7 @@ namespace cbit_Chariot {
             case CarState.Car_SpinRight: Car_spinright(255); break;
         }
     }
-    //% blockId=cbit_CarCtrlSpeed block="小车控制|%index|速度 %speed"
+    //% blockId=cbit_CarCtrlSpeed block="Contrôle de voiture|%index|La vitesse %speed"
     //% weight=92
     //% blockGap=10
     //% speed.min=0 speed.max=255
@@ -1102,7 +1102,7 @@ namespace cbit_Chariot {
             case CarState.Car_SpinRight: Car_spinright(speed); break;
         }
     }
-    //% blockId=cbit_AloneCtrlSpeed block="单独电机|%index|速度 %speed"
+    //% blockId=cbit_AloneCtrlSpeed block="Moteur séparé|%index|La vitesse %speed"
     //% weight=91
     //% blockGap=10
     //% speed.min=0 speed.max=255
